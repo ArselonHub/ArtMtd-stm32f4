@@ -12,6 +12,8 @@
 
 namespace Art
 {
+	class FlashDataStore;
+
 	namespace Private
 	{
 		class DefaultDataStore : public DataStore
@@ -35,6 +37,8 @@ namespace Art
 			DataStore* m_target;
 
 			static DefaultDataStore s_instance;
+
+			friend class ::Art::FlashDataStore;
 		};
 
 		inline DefaultDataStore* DefaultDataStore::instance()
